@@ -4,9 +4,9 @@ import {
   HomeController,
   ListenController,
   PORT,
-} from "./controllers/HomeController.mjs";
+} from "./controllers/HomeController.js";
 import { config } from "dotenv";
-import { MailController } from "./controllers/MailController.mjs";
+import { MailController } from "./controllers/MailController.js";
 
 const app = express();
 config();

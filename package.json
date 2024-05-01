@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "server.mjs",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.mjs",
-    "start": "node server.mjs"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
