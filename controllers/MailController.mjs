@@ -1,24 +1,6 @@
-const app = require("express")();
-const cors = require("cors");
-const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
+import { createTransport } from "nodemailer";
 
-const dotenv = require("dotenv");
-dotenv.config();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-const PORT = process.env.PORT || 3001;
-app.use(cors());
-
-app.get("/", (req, res) => {
-  res.status(200).json({
-    code: 200,
-    message: "Success running server",
-  });
-});
-
-app.post("/mail", (req, res) => {
+const MailController = (req, res) => {
   if (req.headers.authorization != process.env.AUTH) {
     return res.status(403).json({
       code: 403,
@@ -33,7 +15,7 @@ app.post("/mail", (req, res) => {
     });
   }
 
-  const transporter = nodemailer.createTransport({
+  const transporter = createTransport({
     host: process.env.MAIL_HOST,
     port: process.env.SMTP_PORT,
     secure: true,
@@ -74,8 +56,6 @@ app.post("/mail", (req, res) => {
       message: `[Server Error] ${ex}`,
     });
   }
-});
+};
 
-app.listen(PORT, () => {
-  console.log(`Server running: http://localhost:${PORT}`);
-});
+export { MailController };

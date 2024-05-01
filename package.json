@@ -1,16 +1,16 @@
 {
   "name": "codingkids-services",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
-  "main": "server.js",
+  "main": "server.mjs",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "dev": "nodemon server.mjs",
+    "start": "node server.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
