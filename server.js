@@ -1,15 +1,15 @@
-import express from "express";
-import cors from "cors";
-import {
+const {
   HomeController,
   ListenController,
   PORT,
-} from "./controllers/HomeController.js";
-import { config } from "dotenv";
-import { MailController } from "./controllers/MailController.js";
-
+} = require("./controllers/HomeController.js");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const express = require("express");
 const app = express();
-config();
+const { MailController } = require("./controllers/MailController.js");
+
+dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());

@@ -1,5 +1,4 @@
-import { createTransport } from "nodemailer";
-
+const { createTransport } = require("nodemailer");
 const MailController = (req, res) => {
   if (req.headers.authorization != process.env.AUTH) {
     return res.status(403).json({
@@ -58,4 +57,4 @@ const MailController = (req, res) => {
   }
 };
 
-export { MailController };
+module.exports = { MailController };

@@ -10,4 +10,4 @@ const ListenController = () => {
   console.log(`Server running: http://localhost:${PORT}`);
 };
 
-export { HomeController, ListenController, PORT };
+module.exports = { HomeController, ListenController, PORT };
